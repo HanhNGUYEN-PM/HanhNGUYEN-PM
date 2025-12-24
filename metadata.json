@@ -1,0 +1,5 @@
+{
+  "name": "Hanh's Diagram Designer",
+  "description": "A sophisticated diagramming tool that renders PlantUML code in real-time with an AI assistant to help you generate and refine sequence, flow, and class diagrams.",
+  "requestFramePermissions": []
+}
