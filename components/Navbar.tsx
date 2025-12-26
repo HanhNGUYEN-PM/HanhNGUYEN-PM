@@ -28,7 +28,6 @@ const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar, onToggleAI, diagramNam
   const convertOptions = [
     { type: DiagramType.SEQUENCE, label: 'Sequence', icon: 'fa-arrows-left-right' },
     { type: DiagramType.FLOW, label: 'Flow Chart', icon: 'fa-route' },
-    { type: DiagramType.BPMN, label: 'BPMN / Process', icon: 'fa-project-diagram' },
   ];
 
   return (

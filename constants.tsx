@@ -2,18 +2,26 @@
 import React from 'react';
 
 export const INITIAL_PLANTUML = `@startuml
-title Nouveau Diagramme
+title Workflow Standard
+skinparam shadowed false
+skinparam backgroundColor #FFFFFF
+skinparam DefaultFontName "Inter", sans-serif
 
-actor Utilisateur
-participant "Système" as S
-
-Utilisateur -> S: Action
-S --> Utilisateur: Réponse
-
+start
+:Initialiser la requête;
+if (Données valides ?) then (oui)
+  :Traiter les informations;
+  :Générer le rapport;
+  stop
+else (non)
+  :Afficher erreur;
+  stop
+endif
 @enduml`;
 
 export const TEMPLATES = {
   sequence: `@startuml
+skinparam shadowing false
 actor User
 participant "Web Server" as WS
 database "User DB" as DB
@@ -24,28 +32,15 @@ DB --> WS: Return User Record
 WS --> User: Success/Failure
 @enduml`,
   flow: `@startuml
+skinparam shadowed false
 start
-:Hello world;
-if (Condition?) then (yes)
-  :Action 1;
-else (no)
-  :Action 2;
+:Action initiale;
+if (Condition ?) then (vrai)
+  :Traitement A;
+else (faux)
+  :Traitement B;
 endif
-stop
-@enduml`,
-  bpmn: `@startuml
-|Process Owner|
-start
-:Receive Task;
-|System|
-:Validate Data;
-if (Valid?) then (yes)
-  :Notify Approval;
-  |Process Owner|
-  :Approve Task;
-else (no)
-  :Reject;
-endif
+:Finalisation;
 stop
 @enduml`
 };

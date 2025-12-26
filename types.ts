@@ -8,8 +8,7 @@ export interface DiagramData {
 
 export enum DiagramType {
   SEQUENCE = 'sequence',
-  FLOW = 'flow',
-  BPMN = 'bpmn'
+  FLOW = 'flow'
 }
 
 export interface ChatMessage {
